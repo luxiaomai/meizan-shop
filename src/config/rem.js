@@ -14,6 +14,5 @@
   html(objhtml, size, width / 3.75)
   win.onresize = function () {
     html(objhtml, size, width / 3.75)
-    console.log(html(objhtml, size, width / 3.75))
   }
 })(window)

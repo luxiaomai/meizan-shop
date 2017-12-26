@@ -1,11 +1,13 @@
 <template>
   <div>
     <app-banner :listImg="listImg"></app-banner>
+    <router-link></router-link>
   </div>
 </template>
 
 <script>
   import Banner from '../template/Banner.vue'
+  import Footer from '../template/Footer.vue'
   export default{
     name: 'index',
     data () {
@@ -20,7 +22,8 @@
       }
     },
     components: {
-      'app-banner': Banner
+      'app-banner': Banner,
+      'router-link': Footer
     }
   }
 </script>
