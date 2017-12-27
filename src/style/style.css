@@ -1,6 +1,21 @@
+body {
+  background: #f5f5f5;
+}
+
 .swiper-container {
   width: 100%;
-  height: 1.83rem;
+  height: 1.5rem;
+}
+
+.swiper-container1 {
+  margin-top: -.41rem;
+}
+
+.swiper-container1 .swiper-wrapper {
+  width: 70% !important;
+  margin-left: 20%;
+  color: #2a2a2a;
+  overflow: hidden;
 }
 
 .swiper-wrapper {
@@ -15,7 +30,131 @@
   height: 100%;
 }
 
-img {
+.indexSearch{
+  width:3.46rem;
+  height:.33rem;
+  line-height: .33rem;
+  background: rgba(255,255,255,0.50);
+  border-radius: 2px;
+  position: absolute;
+  top:.1rem;
+  left:50%;
+  margin-left:-1.73rem;
+  z-index: 99;
+  font-size: .16rem;
+  color: #666666;
+  text-align: center;
+}
+
+.indexSearch img{
+  width:.12rem;
+  height:.12rem;
+  margin:.1rem .15rem 0 0;
+}
+
+.indexNew {
+  clear: both;
+  height: .5rem;
+  line-height: .5rem;
+  overflow: hidden;
+  padding: 0 .14rem;
+  font-size: .12rem;
+  position: relative;
+  box-shadow: inset 0 -1px 3px -1px #e5e5e5;
+  background: #fff;
+}
+
+.indexNew span {
+  margin-top: .1rem;
+  display: block;
+  width: .5rem;
+  height: .32rem;
+}
+
+.indexNew span img {
+  width: .42rem;
+  height: .32rem;
+}
+
+.indexNew b {
+  float: left;
+  display: block;
+  width: .03rem;
+  height: .03rem;
+  position: relative;
+  top: .23rem;
+  margin-right: .1rem;
+  background: #666;
+  display: inline;
+  border-radius: 50%;
+}
+
+.indexNew .right img {
+  width: .08rem;
+  height: .13rem;
+  position: absolute;
+  right: .14rem;
+  top: .18rem;
+}
+
+.verticalLine {
+  position: absolute;
+  top: .18rem;
+  left: .68rem;
+  height: .16rem;
+  width: 1px;
+  background: #ffa000
+}
+
+/*首页中间导航*/
+.indexNav {
   width: 100%;
-  height: 100%;
+  height: 1.22rem;
+  background: #fff;
+}
+
+.indexNav ul li {
+  float: left;
+  width: 25%;
+}
+
+.Arouter-link {
+  display: block;
+  width: 100%;
+  height: .5rem;
+  text-align: center;
+  font-size: .12rem;
+  color: #333;
+}
+
+.indexNav li span {
+  display: block;
+  margin-top: .1rem;
+}
+
+.icon-one, .icon-two, .icon-three, .icon-four {
+  width: .54rem;
+  height: .54rem;
+  display: inline-block;
+  margin-top: .2rem;
+}
+
+.icon-one {
+  background: url(../images/nav_dianpu.png);
+  background-size: 100% 100%;
+}
+
+.icon-two {
+  background: url(../images/nav_shop.png);
+  background-size: 100% 100%;
+}
+
+.icon-three {
+  background: url(../images/nav_tixian.png);
+  background-size: 100% 100%;
+}
+
+.icon-four {
+  background: url(../images/nav_zuanqian.png);
+  background-size: 100% 100%;
 }

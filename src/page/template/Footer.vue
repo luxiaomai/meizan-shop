@@ -114,7 +114,7 @@
     display: block;
   }
 
-  .router-link-active {
+  .indexNavThree .router-link-active {
     color: #F6AB00;
   }
 
