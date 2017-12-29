@@ -33,6 +33,16 @@
         </li>
       </ul>
     </div>
+    <router-link to="/good/details" class="indexMain">
+      <ul>
+        <li v-for="shop in shopMain">
+          <div><img :src="shop.url"/></div>
+          <div>{{ shop.mane }}</div>
+          <div>{{ shop.title }}</div>
+          <div>￥{{ shop.price }}</div>
+        </li>
+      </ul>
+    </router-link>
     <footer-link></footer-link>
   </div>
 </template>
@@ -46,6 +56,43 @@
     name: 'index',
     data () {
       return {
+        shopMain: [{
+          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
+          price: '233.00',
+          mane: '窝窝遇上馍 粗粮包点',
+          title: '碳烧鱿鱼包',
+          payNumber: '6666'
+        }, {
+          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
+          price: '233.00',
+          mane: '窝窝遇上馍 粗粮包点',
+          title: '碳烧鱿鱼包',
+          payNumber: '6666'
+        }, {
+          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
+          price: '233.00',
+          mane: '窝窝遇上馍 粗粮包点',
+          title: '碳烧鱿鱼包',
+          payNumber: '6666'
+        }, {
+          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
+          price: '233.00',
+          mane: '窝窝遇上馍 粗粮包点',
+          title: '碳烧鱿鱼包',
+          payNumber: '6666'
+        }, {
+          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
+          price: '233.00',
+          mane: '窝窝遇上馍 粗粮包点',
+          title: '碳烧鱿鱼包',
+          payNumber: '6666'
+        }, {
+          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
+          price: '233.00',
+          mane: '窝窝遇上馍 粗粮包点',
+          title: '碳烧鱿鱼包',
+          payNumber: '6666'
+        }],
         listImg: [{
           url: 'https://img1.360buyimg.com/da/jfs/t15847/334/613979012/180567/6cd6603d/5a37317dNafea8b1f.jpg'
         }, {
