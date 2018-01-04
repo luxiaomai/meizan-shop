@@ -80,6 +80,9 @@
       }
     },
     methods: {
-      toggle: function () { this.isShow = !this.isShow }}
+      toggle: function () {
+        this.isShow = !this.isShow
+      }
+    }
   }
 </script>

@@ -10,13 +10,13 @@
     <div class="nameBox" :class="status==1 ? 'loginBlock' : ''">
 
       <div class="registerInput">
-        <input type="tel" id="phone" class="enroll_input" placeholder="输入手机号码" maxlength="11">
-        <span class="clear"><img src="../../images/x.png"></span>
-        <div class="ico1 hover"><img src="../../images/enroll_ico2.png" style="width: .12rem;height: .16rem;"></div>
+        <input type="tel" class="enroll_input" placeholder="输入手机号码" maxlength="11" @keyup="add()" v-model="pForm.phone">
+        <span class="clear" v-show="isShow"><img src="../../images/x.png"></span>
+        <div class="ico1 hover"><img :src="'../../images/enroll_ico' + a==false ? '2.png' : '2-1.png'" style="width: .12rem;height: .16rem;"></div>
       </div>
 
       <div class="registerInput">
-        <input type="password" id="password" class="enroll_input text" placeholder="请输入登录密码">
+        <input type="password" class="enroll_input text" placeholder="请输入登录密码" v-model="pForm.password">
         <span class="clear1"><img src="../../images/x.png"></span>
         <div class="ico1 hover1"><img src="../../images/enroll_ico4.png" style="width: .16rem;height: .16rem;"></div>
         <div class="ico2 ico-class1"></div>
@@ -34,14 +34,14 @@
     </div>
     <div class="codeBox" :class="status==2 ? 'loginBlock' : ''">
       <div class="registerInput">
-        <input type="tel" id="newphone" class="enroll_input text1" placeholder="输入手机号码" maxlength="11">
+        <input type="tel" class="enroll_input text1" placeholder="输入手机号码" maxlength="11" @keyup="add()" v-model="pForm.newPhone">
         <span class="clear2"><img src="../../images/x.png"></span>
         <div class="ico1 hover"><img src="../../images/enroll_ico2.png" style="width: .12rem;height: .16rem;"></div>
       </div>
 
       <div class="enroll">
         <input type="number" pattern="[0-9]*" id="code" class="enroll_input1 text1" placeholder="请输入短信验证码" maxlength="6"
-               style="width: 50%;">
+               style="width: 50%;" v-model="pForm.code">
         <span class="code1 f12" v-show="show" @click="getCode">获取验证码</span>
         <span class="code1 f12" v-show="!show" @click="count">{{count}} s</span>
         <div class="ico1 hover1"><img src="../../images/enroll_ico3.png" style="width: .12rem;height: .15rem;"></div>
@@ -60,7 +60,15 @@
         status: 1,
         show: true,
         count: '',
-        timer: null
+        timer: null,
+        isShow: false,
+        a: true,
+        pForm: {
+          phone: '',
+          password: '',
+          newPhone: '',
+          code: ''
+        }
       }
     },
     methods: {
@@ -77,7 +85,16 @@
             }
           }, 1000)
         }
+      },
+      add: function () {
+        console.log('123')
       }
     }
   }
 </script>
+
+<style>
+  body {
+    background: #fff;
+  }
+</style>

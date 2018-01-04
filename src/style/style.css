@@ -513,7 +513,11 @@ body {
   top: 50%;
   right: .14rem;
   margin-top: -.07rem;
-  display: none;
+}
+
+.registerInput .clear img, .registerInput .clear1 img, .registerInput .clear2 img {
+  width: 100%;
+  height: 100%;
 }
 
 .registerInput .clear1 {
