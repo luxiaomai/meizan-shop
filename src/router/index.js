@@ -4,6 +4,7 @@ import index from '@/page/home/index'
 import classify from '@/page/home/classify'
 import details from '@/page/good/details'
 import warp from '@/page/good/warp'
+import login from '@/page/login/login'
 
 Vue.use(Router)
 
@@ -12,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/index'
+      redirect: '/login'
     },
     {
       path: '/index',
@@ -21,6 +22,10 @@ export default new Router({
     {
       path: '/classify',
       component: classify
+    },
+    {
+      path: '/login',
+      component: login
     },
     {
       path: '/good',

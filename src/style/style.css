@@ -300,7 +300,7 @@ body {
   border-radius: 2px;
 }
 
-.goodsSelect,.goodsSelect1{
+.goodsSelect, .goodsSelect1 {
   height: .44rem;
   line-height: .45rem;
   color: #666;
@@ -310,7 +310,7 @@ body {
   background: #fff;
 }
 
-.goodsSelect img,.goodsSelect1 img{
+.goodsSelect img, .goodsSelect1 img {
   width: .08rem;
   height: .13rem;
   float: right;
@@ -322,4 +322,365 @@ body {
   font-size: .14rem;
   color: #999;
   margin-right: .1rem;
+}
+
+.goodsAssess {
+  padding: 0 .14rem .16rem .14rem;
+  background: #fff;
+}
+
+.goodsAssess .header {
+  padding-top: .14rem;
+  height: .3rem;
+  line-height: .3rem;
+}
+
+.goodsAssess .header span:nth-child(1) {
+  width: .3rem;
+  height: .3rem;
+  display: inline-block;
+  float: left;
+}
+
+.goodsAssess .header span:nth-child(1) img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.goodsAssess .img li div img {
+  width: 100%;
+  height: 100%;
+}
+
+.goodsAssess .header span:nth-child(2) {
+  font-size: .14rem;
+  color: #333;
+  float: left;
+  margin: 0 .1rem;
+}
+
+.goodsAssess .header span:nth-child(3) img {
+  width: .13rem;
+  height: .13rem;
+  float: left;
+  margin: .08rem .04rem 0;
+}
+
+.goodsAssess .data {
+  height: .2rem;
+  line-height: .2rem;
+  color: #999;
+  font-size: .14rem;
+  margin: .1rem 0;
+}
+
+.goodsAssess .test {
+  font-size: .14rem;
+  color: #333;
+}
+
+.goodsAssess .img li {
+  width: 33.3%;
+  float: left;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.goodsAssess .img li div {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: .14rem;
+}
+
+.goodsAssess .more {
+  width: .74rem;
+  height: .2rem;
+  line-height: .2rem;
+  text-align: center;
+  border: 1px solid #F6AB00;
+  color: #F6AB00;
+  font-size: .14rem;
+  clear: both;
+  margin: .16rem auto 0;
+  border-radius: 2px;
+}
+
+.goodsMain {
+  background: #fff;
+  margin-top: .1rem;
+}
+
+.goodsMain .title {
+  height: .44rem;
+  line-height: .44rem;
+  color: #666;
+  font-size: .14rem;
+  text-align: center;
+}
+
+.goodsMain .main img {
+  width: 100%;
+  height: 100%;
+}
+
+/*注册登录*/
+.loginTab {
+  height: .48rem;
+  line-height: .48rem;
+  box-shadow: inset 0 -1px 1px -1px #ccc;
+  font-size: .16rem;
+  color: #666;
+  background: #fff;
+}
+
+.loginTab .left {
+  width: 50%;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+
+.loginTab .right {
+  width: 50%;
+  float: right;
+  text-align: center;
+  position: relative;
+}
+
+.loginTab .left span {
+  height: 2px;
+  width: 1.14rem;
+  background: #F6AB00;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -.57rem;
+  display: none;
+}
+
+.loginTab .right span {
+  height: 2px;
+  width: 1.14rem;
+  background: #F6AB00;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -.57rem;
+  display: none;
+}
+
+.loginTabActive {
+  color: #333 !important;
+  font-weight: bold;
+}
+
+.loginBlock {
+  display: block !important;
+}
+
+.nameBox, .codeBox {
+  display: none;
+}
+
+.registerInput {
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+  box-shadow: inset 0 -1px 1px -1px #ccc;
+  background: #fff;
+  height: .58rem;
+}
+
+.registerInput .enroll_input {
+  width: 88%;
+  height: .44rem;
+  line-height: .44rem;
+  margin: 0 auto;
+  display: block;
+  font-size: .14rem;
+  outline: none;
+  background: none;
+  border: none;
+  padding-left: .3rem;
+  padding-top: .08rem;
+}
+
+.registerInput .clear, .registerInput .clear2 {
+  width: .14rem;
+  height: .14rem;
+  position: absolute;
+  top: 50%;
+  right: .14rem;
+  margin-top: -.07rem;
+  display: none;
+}
+
+.registerInput .clear1 {
+  width: .14rem;
+  height: .14rem;
+  position: absolute;
+  top: 50%;
+  right: .32rem;
+  margin-top: -.07rem;
+  display: none;
+}
+
+.registerInput .ico1 {
+  width: .16rem;
+  height: .18rem;
+  position: absolute;
+  left: .08rem;
+  top: 50%;
+  margin-top: -.08rem;
+}
+
+.registerInput .ico-class, .registerInput .ico-class1 {
+  width: .16rem;
+  height: .12rem;
+  position: absolute;
+  right: .08rem;
+  bottom: .21rem;
+}
+
+.registerInput .ico2 {
+  background: url(../images/enroll_ico8.png) no-repeat;
+  background-size: cover;
+}
+
+.registerInput .ico3 {
+  background: url(../images/enroll_ico8-1.png) no-repeat;
+  background-size: cover;
+}
+
+.forget {
+  float: right;
+  margin-top: .2rem;
+  font-size: .14rem;
+  text-align: right;
+}
+
+.loginBtn {
+  width: 94%;
+  margin: .2rem auto 0;
+  height: .44rem;
+  line-height: .44rem;
+  text-align: center;
+  color: #fff;
+  font-size: .16rem;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  background: #D8D8D8;
+}
+
+.loginBtn1 {
+  width: 94%;
+  margin: .54rem auto 0;
+  height: .44rem;
+  line-height: .44rem;
+  text-align: center;
+  color: #fff;
+  font-size: .16rem;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  background: #D8D8D8;
+}
+
+.wxLogin {
+  width: 94%;
+  border-top: 1px solid #DFDFDF;
+  margin: .4rem auto 0;
+  position: relative;
+}
+
+.wxLoginText {
+  color: #999;
+  font-size: .12rem;
+  height: .14rem;
+  line-height: .14rem;
+  text-align: center;
+  background: #fff;
+  width: 1rem;
+  margin: -.07rem auto 0;
+}
+
+.wxLoginImg {
+  width: .44rem;
+  height: .44rem;
+  margin: .3rem auto .1rem;
+}
+
+.wxLoginImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.wxLogin p {
+  text-align: center;
+  font-size: .12rem;
+  color: #666666;
+}
+
+.wxEnroll {
+  width: 3.4rem;
+  height: .44rem;
+  line-height: .44rem;
+  text-align: center;
+  position: fixed;
+  bottom: .6rem;
+  left: 50%;
+  margin-left: -1.7rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  font-size: .16rem;
+  color: #666;
+  display: block;
+}
+
+.enroll {
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
+  box-shadow: inset 0 -1px 1px -1px #ccc;
+  background: #fff;
+  height: .58rem;
+}
+
+.enroll .enroll_input1 {
+  height: .44rem;
+  line-height: .44rem;
+  margin: 0 0 0 .05rem;
+  display: block;
+  font-size: .14rem;
+  outline: none;
+  background: none;
+  border: none;
+  padding-left: .3rem;
+  position: relative;
+  padding-top: .08rem;
+}
+
+.enroll .code1 {
+  position: absolute;
+  top: .13rem;
+  right: .1rem;
+  height: .32rem;
+  line-height: .32rem;
+  width: 30%;
+  text-align: center;
+  color: #fff;
+  background: #F6AB00;
+  font-size: .14rem;
+  border-radius: 2px;
+}
+
+.enroll .ico1 {
+  width: .16rem;
+  height: .18rem;
+  position: absolute;
+  left: .08rem;
+  top: 50%;
+  margin-top: -.08rem;
 }

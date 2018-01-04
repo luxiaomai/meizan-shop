@@ -10,4 +10,47 @@ input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inher
 input,button,textarea,select{*font-size:100%}
 img{border: none; vertical-align: top;}
 html,body{  max-width: 750px;  margin: 0 auto;}
+.f12 {
+  font-size: .12rem;
+}
+
+.f14 {
+  font-size: .14rem;
+}
+
+.f16 {
+  font-size: .16rem;
+}
+
+.f18 {
+  font-size: .18rem;
+}
+
+.f22 {
+  font-size: .22rem;
+}
+
+.f24 {
+  font-size: .24rem;
+}
+
+.f28 {
+  font-size: .28rem;
+}
+
+.f30 {
+  font-size: .3rem;
+}
+
+.c3 {
+  color: #333333;
+}
+
+.c9 {
+  color: #999999;
+}
+
+.c6 {
+  color: #666666;
+}
 
