@@ -10,9 +10,9 @@
     <div class="nameBox" :class="status==1 ? 'loginBlock' : ''">
 
       <div class="registerInput">
-        <input type="tel" class="enroll_input" placeholder="输入手机号码" maxlength="11" @keyup="add()" v-model="pForm.phone">
+        <input type="tel" class="enroll_input" placeholder="输入手机号码" maxlength="11" @keyup="add()" v-model="pForm.mobileNo">
         <span class="clear" v-show="isShow"><img src="../../images/x.png"></span>
-        <div class="ico1 hover"><img :src="'../../images/enroll_ico' + a==false ? '2.png' : '2-1.png'" style="width: .12rem;height: .16rem;"></div>
+        <div class="ico1 hover"><img src="../../images/enroll_ico2.png" style="width: .12rem;height: .16rem;"></div>
       </div>
 
       <div class="registerInput">
@@ -24,7 +24,7 @@
 
       <div class="forget" style="margin-right: .15rem;"><a href="smsCode.html" style="color: #999;">忘记密码</a></div>
       <div style="clear: both"></div>
-      <button type="button" class="loginBtn" disabled>登录</button>
+      <button type="button" class="loginBtn" @click="login()">登录</button>
 
       <div class="wxLogin">
         <div class="wxLoginText">其他登录方式</div>
@@ -47,7 +47,7 @@
         <div class="ico1 hover1"><img src="../../images/enroll_ico3.png" style="width: .12rem;height: .15rem;"></div>
       </div>
 
-      <button type="button" class="loginBtn1" disabled>登录</button>
+      <button type="button" class="loginBtn1">登录</button>
     </div>
     <div class="wxEnroll">手机快速注册</div>
   </div>
@@ -64,7 +64,7 @@
         isShow: false,
         a: true,
         pForm: {
-          phone: '',
+          mobileNo: '',
           password: '',
           newPhone: '',
           code: ''
@@ -88,6 +88,15 @@
       },
       add: function () {
         console.log('123')
+      },
+      login () {
+        this.$http.post('/v1/userInfo/login', this.pForm)
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
       }
     }
   }
