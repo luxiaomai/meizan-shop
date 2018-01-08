@@ -10,21 +10,22 @@
     <div class="nameBox" :class="status==1 ? 'loginBlock' : ''">
 
       <div class="registerInput">
-        <input type="tel" class="enroll_input" placeholder="输入手机号码" maxlength="11" @keyup="add()" v-model="pForm.mobileNo">
+        <input type="tel" class="enroll_input" placeholder="输入手机号码" maxlength="11" @focus="focusPhone()" @blur="blurPhone()" v-model="pForm.mobileNo">
         <span class="clear" v-show="isShow"><img src="../../images/x.png"></span>
-        <div class="ico1 hover"><img src="../../images/enroll_ico2.png" style="width: .12rem;height: .16rem;"></div>
+        <div class="ico1 hover"><img :src="require('../../images/enroll_ico' + phone + '.png')"
+                                     style="width: .12rem;height: .16rem;"></div>
       </div>
 
       <div class="registerInput">
-        <input type="password" class="enroll_input text" placeholder="请输入登录密码" v-model="pForm.password">
+        <input type="password" class="enroll_input text" placeholder="请输入登录密码" @focus="focusPassword()" @blur="blurPassword()" v-model="pForm.password">
         <span class="clear1"><img src="../../images/x.png"></span>
-        <div class="ico1 hover1"><img src="../../images/enroll_ico4.png" style="width: .16rem;height: .16rem;"></div>
+        <div class="ico1 hover1"><img :src="require('../../images/enroll_ico' + password + '.png')" style="width: .16rem;height: .16rem;"></div>
         <div class="ico2 ico-class1"></div>
       </div>
 
-      <div class="forget" style="margin-right: .15rem;"><a href="smsCode.html" style="color: #999;">忘记密码</a></div>
+      <div class="forget">忘记密码</div>
       <div style="clear: both"></div>
-      <button type="button" class="loginBtn" @click="login()">登录</button>
+      <button type="button" class="loginBtn" @click="login()" :disabled="!pForm.mobileNo || !pForm.password">登录</button>
 
       <div class="wxLogin">
         <div class="wxLoginText">其他登录方式</div>
@@ -34,20 +35,21 @@
     </div>
     <div class="codeBox" :class="status==2 ? 'loginBlock' : ''">
       <div class="registerInput">
-        <input type="tel" class="enroll_input text1" placeholder="输入手机号码" maxlength="11" @keyup="add()" v-model="pForm.newPhone">
+        <input type="tel" class="enroll_input text1" placeholder="输入手机号码" maxlength="11" @focus="focusPhone()" @blur="blurPhone()"
+               v-model="pForm.mobileNo">
         <span class="clear2"><img src="../../images/x.png"></span>
-        <div class="ico1 hover"><img src="../../images/enroll_ico2.png" style="width: .12rem;height: .16rem;"></div>
+        <div class="ico1 hover"><img :src="require('../../images/enroll_ico' + phone + '.png')" style="width: .12rem;height: .16rem;"></div>
       </div>
 
       <div class="enroll">
-        <input type="number" pattern="[0-9]*" id="code" class="enroll_input1 text1" placeholder="请输入短信验证码" maxlength="6"
-               style="width: 50%;" v-model="pForm.code">
-        <span class="code1 f12" v-show="show" @click="getCode">获取验证码</span>
+        <input type="tel" pattern="[0-9]*" id="code" class="enroll_input1 text1" placeholder="请输入短信验证码" maxlength="6"
+               @focus="focusCode()" @blur="blurCode()" v-model="pForm.smsCode">
+        <span class="code1 f12" v-show="show" @click="sendSms()">获取验证码</span>
         <span class="code1 f12" v-show="!show" @click="count">{{count}} s</span>
-        <div class="ico1 hover1"><img src="../../images/enroll_ico3.png" style="width: .12rem;height: .15rem;"></div>
+        <div class="ico1 hover1"><img :src="require('../../images/enroll_ico' + code + '.png')" style="width: .12rem;height: .15rem;"></div>
       </div>
 
-      <button type="button" class="loginBtn1">登录</button>
+      <button type="button" class="loginBtn1" @click="codeLogin()" :disabled="!pForm.mobileNo || !pForm.smsCode">登录</button>
     </div>
     <div class="wxEnroll">手机快速注册</div>
   </div>
@@ -58,6 +60,9 @@
     data () {
       return {
         status: 1,
+        phone: '2',
+        code: '3',
+        password: '4',
         show: true,
         count: '',
         timer: null,
@@ -66,8 +71,7 @@
         pForm: {
           mobileNo: '',
           password: '',
-          newPhone: '',
-          code: ''
+          smsCode: ''
         }
       }
     },
@@ -86,16 +90,62 @@
           }, 1000)
         }
       },
-      add: function () {
-        console.log('123')
+      focusPhone: function () {
+        this.phone = '2-1'
+      },
+      blurPhone: function () {
+        this.phone = '2'
+      },
+      focusPassword: function () {
+        this.password = '4-1'
+      },
+      blurPassword: function () {
+        this.password = '4'
+      },
+      focusCode: function () {
+        this.code = '3-1'
+      },
+      blurCode: function () {
+        this.code = '3'
       },
       login () {
-        this.$http.post('/v1/userInfo/login', this.pForm)
-          .then(function (response) {
-            console.log(response)
-          })
-          .catch(function (error) {
-            console.log(error)
+        if (!(/^1[3|4|5|7|8]\d{9}$/.test(this.pForm.mobileNo))) {
+          console.log('请填写正确的手机号码')
+        } else if (!(/^[0-9a-zA-Z_!@#$%^&*]{8,16}$/.test(this.pForm.password))) {
+          console.log('密码格式有误')
+        } else {
+          this.$http.post('/v1/userInfo/login', this.pForm)
+            .then(response => {
+              if (response.data.return_code === '0000') {
+                this.$router.replace({path: '/index'})
+              }
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+        }
+      },
+      codeLogin () {
+        if (!(/^1[3|4|5|7|8]\d{9}$/.test(this.pForm.mobileNo))) {
+          console.log('请填写正确的手机号码')
+        } else {
+          this.$http.post('/v1/userInfo/smsLogin', this.pForm)
+            .then(response => {
+              if (response.data.return_code === '0000') {
+                this.$router.replace({path: '/index'})
+              }
+            })
+            .catch(function (error) {
+              console.log(error)
+            })
+        }
+      },
+      sendSms () {
+        this.$http.post('/v1/userInfo/sendLoginSms', this.pForm)
+          .then(response => {
+            if (response.data.return_code === '0000') {
+              this.getCode()
+            }
           })
       }
     }
