@@ -16,10 +16,12 @@
   "dependencies": {
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "mint-ui": "^2.2.13",
     "swiper": "^4.0.7",
     "vue": "^2.5.2",
     "vue-axios": "^2.0.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-weui": "^0.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

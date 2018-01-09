@@ -11,6 +11,9 @@ import './config/rem'
 import './style/reset.css'
 // 引入样式表
 import './style/style.css'
+import Mint from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(Mint)
 
 Vue.config.productionTip = false
 Vue.prototype.$http = axios

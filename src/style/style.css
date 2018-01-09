@@ -687,6 +687,20 @@ body {
   border-radius: 2px;
 }
 
+.enroll .code {
+  position: absolute;
+  top: .13rem;
+  right: .1rem;
+  height: .32rem;
+  line-height: .32rem;
+  width: 30%;
+  text-align: center;
+  color: #fff;
+  background: #D8D8D8;
+  font-size: .14rem;
+  border-radius: 2px;
+}
+
 .enroll .ico1 {
   width: .16rem;
   height: .18rem;
