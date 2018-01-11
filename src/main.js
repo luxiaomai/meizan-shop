@@ -11,10 +11,12 @@ import './config/rem'
 import './style/reset.css'
 // 引入样式表
 import './style/style.css'
-import Mint from 'mint-ui'
+// 引入饿了么ui
+import MintUI from 'mint-ui'
+// 引入饿了么样式表
 import 'mint-ui/lib/style.css'
-Vue.use(Mint)
 
+Vue.use(MintUI)
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 axios.defaults.transformRequest = function (data) {

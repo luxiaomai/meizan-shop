@@ -1,6 +1,6 @@
 <template>
   <div class="indexNew">
-    <span><img src="../../images/toutiao.png"></span>
+    <span class="left"><img src="../../images/toutiao.png"></span>
     <div class="verticalLine"></div>
     <div class="swiper-container1">
       <div class="swiper-wrapper">

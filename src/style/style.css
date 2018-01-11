@@ -71,9 +71,10 @@ body {
   height: .32rem;
 }
 
-.indexNew span img {
+.indexNew .left img {
   width: .42rem;
-  height: .32rem;
+  height: .16rem;
+  margin-top: .08rem;
 }
 
 .indexNew b {
@@ -708,4 +709,23 @@ body {
   left: .08rem;
   top: 50%;
   margin-top: -.08rem;
+}
+
+.agreement {
+  height: .3rem;
+  line-height: .3rem;
+  margin-top: .2rem;
+  padding-left: .15rem;
+  position: relative;
+}
+
+.agreement img {
+  width: .18rem;
+  height: .18rem;
+  margin-top: .06rem;
+  margin-right: .08rem;
+}
+
+.agreement .xieyi, .agreement .yinsi {
+  color: #4990E2;
 }

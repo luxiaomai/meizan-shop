@@ -12,16 +12,16 @@
       <div class="registerInput">
         <input type="tel" class="enroll_input" placeholder="输入手机号码" maxlength="11" @focus="focusPhone()"
                @blur="blurPhone()" v-model="pForm.mobileNo">
-        <span class="clear" v-show="isShow"><img src="../../images/x.png"></span>
-        <div class="ico1 hover"><img :src="require('../../images/enroll_ico' + phone + '.png')"
+        <!--<span class="clear" v-show="isShow"><img src="../../images/x.png"></span>-->
+        <div class="ico1"><img :src="require('../../images/enroll_ico' + phone + '.png')"
                                      style="width: .12rem;height: .16rem;"></div>
       </div>
 
       <div class="registerInput">
         <input type="password" class="enroll_input text" placeholder="请输入登录密码" @focus="focusPassword()"
                @blur="blurPassword()" v-model="pForm.password">
-        <span class="clear1"><img src="../../images/x.png"></span>
-        <div class="ico1 hover1"><img :src="require('../../images/enroll_ico' + password + '.png')"
+       <!-- <span class="clear1"><img src="../../images/x.png"></span>-->
+        <div class="ico1"><img :src="require('../../images/enroll_ico' + password + '.png')"
                                       style="width: .16rem;height: .16rem;"></div>
         <div class="ico2 ico-class1"></div>
       </div>
@@ -41,8 +41,8 @@
         <input type="tel" class="enroll_input text1" placeholder="输入手机号码" maxlength="11" @focus="focusPhone()"
                @blur="blurPhone()"
                v-model="pForm.mobileNo">
-        <span class="clear2"><img src="../../images/x.png"></span>
-        <div class="ico1 hover"><img :src="require('../../images/enroll_ico' + phone + '.png')"
+       <!-- <span class="clear2"><img src="../../images/x.png"></span>-->
+        <div class="ico1"><img :src="require('../../images/enroll_ico' + phone + '.png')"
                                      style="width: .12rem;height: .16rem;"></div>
       </div>
 
@@ -51,14 +51,14 @@
                @focus="focusCode()" @blur="blurCode()" v-model="pForm.smsCode">
         <span class="code1 f12" v-show="show" @click="sendSms()">获取验证码</span>
         <span class="code f12" v-show="!show" @click="count">{{count}} s</span>
-        <div class="ico1 hover1"><img :src="require('../../images/enroll_ico' + code + '.png')"
+        <div class="ico1"><img :src="require('../../images/enroll_ico' + code + '.png')"
                                       style="width: .12rem;height: .15rem;"></div>
       </div>
 
       <button type="button" class="loginBtn1" @click="codeLogin()" :disabled="!pForm.mobileNo || !pForm.smsCode">登录
       </button>
     </div>
-    <div class="wxEnroll">手机快速注册</div>
+    <router-link to="/register" class="wxEnroll">手机快速注册</router-link>
   </div>
 </template>
 
