@@ -729,3 +729,43 @@ body {
 .agreement .xieyi, .agreement .yinsi {
   color: #4990E2;
 }
+
+.agreementText, .agreementText1 {
+  padding: 0 .15rem;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  font-size: .12rem;
+}
+
+.agreementText p, .agreementText1 p {
+  margin-top: .05rem;
+  letter-spacing: 1px;
+}
+
+.agreementText p:nth-child(1), .agreementText1 p:nth-child(1) {
+  text-align: center;
+  font-size: .16rem;
+  margin: .16rem 0;
+  font-weight: bold;
+}
+
+.agreementText p:nth-child(2), .agreementText1 p:nth-child(2) {
+  font-size: .12rem;
+  text-indent: 1em;
+}
+
+.agreementBtn {
+  height: .44rem;
+  line-height: .44rem;
+  background: #F6AB00;
+  text-align: center;
+  width: 94%;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: .16rem;
+  color: #fff;
+  border: none;
+  margin: .2rem auto;
+}

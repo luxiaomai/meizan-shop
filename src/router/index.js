@@ -6,6 +6,8 @@ import details from '@/page/good/details'
 import warp from '@/page/good/warp'
 import login from '@/page/login/login'
 import register from '@/page/login/register'
+import forgetPassword from '@/page/login/forgetPassword'
+import resetPassword from '@/page/login/resetPassword'
 
 Vue.use(Router)
 
@@ -22,9 +24,20 @@ export default new Router({
       path: '/login',
       component: login
     },
+    // 注册
     {
       path: '/register',
       component: register
+    },
+    // 修改密码短信验证
+    {
+      path: '/forgetPassword',
+      component: forgetPassword
+    },
+    // 设置新密码
+    {
+      path: '/resetPassword',
+      component: resetPassword
     },
     // 首页
     {

@@ -26,7 +26,7 @@
         <div class="ico2 ico-class1"></div>
       </div>
 
-      <div class="forget">忘记密码</div>
+      <router-link to="/forgetPassword" class="forget">忘记密码</router-link>
       <div style="clear: both"></div>
       <button type="button" class="loginBtn" @click="login()" :disabled="!pForm.mobileNo || !pForm.password">登录</button>
 

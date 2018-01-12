@@ -35,11 +35,11 @@
     </div>
     <router-link to="/good/details" class="indexMain">
       <ul>
-        <li v-for="shop in shopMain">
-          <div><img :src="shop.url"/></div>
-          <div>{{ shop.mane }}</div>
-          <div>{{ shop.title }}</div>
-          <div>￥{{ shop.price }}</div>
+        <li v-for="shop in shopGoodsInfoList">
+          <div><img :src="shop.SHOW_IMAGE_URL"/></div>
+          <div>{{ shop.GOODS_NAME }}</div>
+          <div>{{ shop.GOODS_TITLE }}</div>
+          <div>￥{{ shop.PRICE }}</div>
         </li>
       </ul>
     </router-link>
@@ -51,48 +51,16 @@
   import Banner from '../template/Banner.vue'
   import Footer from '../template/Footer.vue'
   import NewList from '../template/IndexNew.vue'
+  import { Toast } from 'mint-ui'
 
   export default{
     name: 'index',
     data () {
       return {
-        shopMain: [{
-          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
-          price: '233.00',
-          mane: '窝窝遇上馍 粗粮包点',
-          title: '碳烧鱿鱼包',
-          payNumber: '6666'
-        }, {
-          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
-          price: '233.00',
-          mane: '窝窝遇上馍 粗粮包点',
-          title: '碳烧鱿鱼包',
-          payNumber: '6666'
-        }, {
-          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
-          price: '233.00',
-          mane: '窝窝遇上馍 粗粮包点',
-          title: '碳烧鱿鱼包',
-          payNumber: '6666'
-        }, {
-          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
-          price: '233.00',
-          mane: '窝窝遇上馍 粗粮包点',
-          title: '碳烧鱿鱼包',
-          payNumber: '6666'
-        }, {
-          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
-          price: '233.00',
-          mane: '窝窝遇上馍 粗粮包点',
-          title: '碳烧鱿鱼包',
-          payNumber: '6666'
-        }, {
-          url: 'http://www.meizan999.com/uploadfiles/pictures/product/20170415215242_5312.jpg',
-          price: '233.00',
-          mane: '窝窝遇上馍 粗粮包点',
-          title: '碳烧鱿鱼包',
-          payNumber: '6666'
-        }],
+        shopGoodsInfoList: [], // 初始化参数
+        page: { // 分页数据
+          page: 1 // 当前页
+        },
         listImg: [{
           url: 'https://img1.360buyimg.com/da/jfs/t15847/334/613979012/180567/6cd6603d/5a37317dNafea8b1f.jpg'
         }, {
@@ -115,6 +83,22 @@
       'app-banner': Banner,
       'footer-link': Footer,
       'new-list': NewList
+    },
+    methods: {
+      goodsList () {
+        this.$http.post('/v1/shopGoodsInfo/queryList', this.page)
+          .then(response => {
+            if (response.data.return_code === '0000') {
+              this.shopGoodsInfoList = response.data.shopGoodsInfoList // 赋值给数组
+            } else if (response.data.return_code === '0001') {}
+          })
+          .catch(function () {
+            Toast({message: '请求错误', duration: 2000})
+          })
+      }
+    },
+    created () {
+      this.goodsList() // 加载数据
     }
   }
 </script>
