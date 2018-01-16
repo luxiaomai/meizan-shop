@@ -769,3 +769,49 @@ body {
   border: none;
   margin: .2rem auto;
 }
+
+.searchHeader {
+  padding: 0 .14rem;
+  height: .58rem;
+  line-height: .58rem;
+  border-bottom: 1px solid #eee;
+}
+
+.searchInput {
+  width: 3rem;
+  font-size: .14rem;
+  float: left;
+  height: .38rem;
+  margin-top: .1rem;
+  background: #EDEDED;
+  border-radius: 2px;
+  position: relative;
+}
+
+.searchInput img {
+  width: .12rem;
+  height: .12rem;
+  position: absolute;
+  top: 50%;
+  left: .1rem;
+  margin-top: -.06rem;
+}
+
+.searchInput input {
+  width: 2.5rem;
+  border: none;
+  height: 100%;
+  background: #EDEDED;
+  margin-bottom: .07rem;
+  margin-left: .38rem;
+  display: block;
+}
+
+.searchBtn {
+  width: .4rem;
+  text-align: center;
+  font-size: .16rem;
+  color: #666;
+  float: right;
+}
+

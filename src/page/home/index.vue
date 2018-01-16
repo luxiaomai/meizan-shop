@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="indexSearch">
-      <router-link to="/"><img src="../../images/search.png">搜索商品</router-link>
+      <router-link to="/search"><img src="../../images/search.png">搜索商品</router-link>
     </div>
     <app-banner :listImg="listImg"></app-banner>
     <new-list :newList="newList"></new-list>

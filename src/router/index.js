@@ -8,6 +8,7 @@ import login from '@/page/login/login'
 import register from '@/page/login/register'
 import forgetPassword from '@/page/login/forgetPassword'
 import resetPassword from '@/page/login/resetPassword'
+import search from '@/page/search/search'
 
 Vue.use(Router)
 
@@ -48,6 +49,11 @@ export default new Router({
     {
       path: '/classify',
       component: classify
+    },
+    // 搜索
+    {
+      path: '/search',
+      component: search
     },
     // 商品
     {
