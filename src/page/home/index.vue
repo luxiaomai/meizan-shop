@@ -33,9 +33,9 @@
         </li>
       </ul>
     </div>
-    <router-link to="/good/details" class="indexMain">
+    <router-link v-for="(shop, index) in shopGoodsInfoList" :key="index" :to="'/good/details/'+shop.ID" class="indexMain">
       <ul>
-        <li v-for="shop in shopGoodsInfoList">
+        <li>
           <div><img :src="shop.SHOW_IMAGE_URL"/></div>
           <div>{{ shop.GOODS_NAME }}</div>
           <div>{{ shop.GOODS_TITLE }}</div>
@@ -57,6 +57,7 @@
     name: 'index',
     data () {
       return {
+        ID: '',
         shopGoodsInfoList: [], // 初始化参数
         page: { // 分页数据
           page: 1 // 当前页

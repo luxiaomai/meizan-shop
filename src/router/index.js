@@ -63,7 +63,7 @@ export default new Router({
       children: [
         // 商品详情
         {
-          path: 'details',
+          path: 'details/:id',
           component: details,
           mate: {title: '商品详情', needMenu: true}
         }
