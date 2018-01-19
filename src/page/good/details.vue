@@ -161,7 +161,7 @@
         this.isActive = true
         this.$http.post('/v1/shopGoodsInfo/selectGoodsSkuGet', {specsId: Skuid, goodsId: this.$route.params.id})
           .then(response => {
-            if (response.data.return_code === '0000') {
+            if (response.data.return_code === '0000') { // 查询规格需要验证登录状态
               console.log('查询成功')
             } else {
               Toast({message: response.data.return_msg, duration: 2000})

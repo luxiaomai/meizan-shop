@@ -61,7 +61,24 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="tel
   text-align: center;
 }
 
-.indexSearch img {
+.indexSearch1 {
+  width: 3.46rem;
+  height: .33rem;
+  line-height: .33rem;
+  background: rgba(255, 255, 255, 0.50);
+  border-radius: 2px;
+  position: absolute;
+  top: .1rem;
+  left: 50%;
+  margin-left: -1.73rem;
+  z-index: 99;
+  font-size: .16rem;
+  color: #666666;
+  text-align: center;
+  border:1px solid #E5E5E5;
+}
+
+.indexSearch img,.indexSearch1 img {
   width: .12rem;
   height: .12rem;
   margin: .1rem .15rem 0 0;
@@ -914,4 +931,38 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="tel
 .screenNavActive {
   color: #F6AB00 !important;
   border: 1px solid #F6AB00 !important;
+}
+
+/*分类*/
+.classifyNav {
+  height: 5rem;
+  width: .79rem;
+  border-right: 1px solid #efeff4;
+  border-top: 1px solid #efeff4;
+  border-bottom: 1px solid #efeff4;
+  float: left;
+  overflow-y: scroll;
+  margin-top: .7rem;
+}
+
+.classifyNav li {
+  height: .2rem;
+  line-height: .2rem;
+  font-size: .14rem;
+  color: #666;
+  text-align: center;
+  margin: .27rem 0;
+  position: relative;
+}
+
+.indexNavOneActive {
+  color: #F6AB00 !important;
+}
+
+.classifyNav li span {
+  height: 100%;
+  width: 3px;
+  background: #F6AB00;
+  position: absolute;
+  left: 0;
 }
