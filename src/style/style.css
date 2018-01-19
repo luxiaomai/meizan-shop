@@ -2,6 +2,21 @@ body {
   background: #f5f5f5;
 }
 
+input[type="button"], input[type="submit"], input[type="reset"], input[type="tel"] {
+  -webkit-appearance: none;
+}
+
+.withdrawCash_bg {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  position: fixed;
+  top: 0;
+  opacity: .4;
+  z-index: 1;
+  display:block;
+}
+
 .swiper-container {
   width: 100%;
   height: 1.5rem;
@@ -815,3 +830,88 @@ body {
   float: right;
 }
 
+ .goodsSpec {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+   z-index: 2;
+}
+
+ .goodsSpec span:nth-child(1) img {
+  height: .76rem;
+  width: .76rem;
+  margin: .14rem;
+  float: left;
+}
+
+ .goodsSpec .one {
+  color: #F6AB00;
+  font-size: .14rem;
+  position: absolute;
+  top: .48rem;
+  width: 2rem;
+}
+
+ .goodsSpec .two {
+  color: #666;
+  font-size: .14rem;
+  position: absolute;
+  top: .7rem;
+  width: .6rem;
+}
+
+ .goodsSpec .three {
+  color: #666;
+  font-size: .14rem;
+  position: absolute;
+  top: .7rem;
+  left: .6rem;
+  width: 2rem;
+}
+
+ .goodsSpec .four img {
+  width: .14rem !important;
+  height: .14rem !important;
+  margin-top: .6rem;
+  float: right !important;
+}
+
+.goodsSpecTitle {
+  font-size: .14rem;
+  color: #666;
+  margin: .24rem 0 0 .14rem;
+  clear: both;
+}
+
+.goodsSpecNav, .goodsSpecNav1 {
+  width: 100%;
+  background: #fff;
+  padding-bottom: .14rem;
+}
+
+.goodsSpecNav div, .goodsSpecNav1 div {
+  float: left;
+  border: 1px solid #e5e5e5;
+  height: .28rem;
+  line-height: .28rem;
+  text-align: center;
+  color: #666;
+  font-size: .14rem;
+  margin: .14rem 0 0 .08rem;
+  padding: 0 .2rem;
+}
+
+.goodsSpecBtn{
+  height: .5rem;
+  line-height: .5rem;
+  text-align: center;
+  color: #fff;
+  background:  #F6AB00;
+  clear: both;
+}
+
+.screenNavActive {
+  color: #F6AB00 !important;
+  border: 1px solid #F6AB00 !important;
+}
