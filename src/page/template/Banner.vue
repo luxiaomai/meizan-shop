@@ -13,7 +13,7 @@
   export default {
     props: ['AdList'],
     mounted () {
-      var swiper = new Swiper('.swiper-container', {
+      let swiper = new Swiper('.swiper-container', {
         loop: true,
         speed: 600,
         autoplay: true,

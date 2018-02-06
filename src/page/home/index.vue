@@ -4,7 +4,7 @@
       <router-link to="/search"><img src="../../images/search.png">搜索商品</router-link>
     </div>
 
-    <app-banner :AdList="adList"></app-banner>
+    <app-banner :AdList="AdList"></app-banner>
 
     <new-list :newList="newList"></new-list>
     <div class="indexNav">
@@ -88,7 +88,7 @@
         goodsYhList: [],
         goodsXpList: [],
         goodsJfList: [],
-        adList: [],
+        AdList: [],
         imageUrl: '',
         page: { // 分页数据
           page: 1 // 当前页
@@ -139,7 +139,7 @@
             if (response.data.return_code === '0000') {
               this.AdList = response.data.adList // 赋值给数组
               this.imageUrl = response.data.imageUrl
-              console.log(this.AdList.imageUrl)
+              console.log(this.AdList)
             } else if (response.data.return_code === '0001') {}
           })
           .catch(function () {
