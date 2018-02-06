@@ -15,10 +15,10 @@
     mounted () {
       let swiper = new Swiper('.swiper-container', {
         loop: true,
-        speed: 600,
-        autoplay: true,
-        onTouchEnd: function () {
-          swiper.startAutoplay()
+        speed: 300,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
         }
       })
     }
