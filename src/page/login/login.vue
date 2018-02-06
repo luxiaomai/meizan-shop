@@ -122,7 +122,7 @@
         } else if (!(/^[0-9a-zA-Z_!@#$%^&*]{8,16}$/.test(this.pForm.password))) {
           Toast({message: '密码格式有误', duration: 2000})
         } else {
-          this.$http.post('/v1/userInfo/login', this.pForm)
+          this.$http.post('/userInfo/login', this.pForm)
             .then(response => {
               if (response.data.return_code === '0000') {
                 Toast({message: response.data.return_msg, duration: 2000})
@@ -140,7 +140,7 @@
         if (!(/^1[3|4|5|7|8]\d{9}$/.test(this.pForm.mobileNo))) {
           console.log('请填写正确的手机号码')
         } else {
-          this.$http.post('/v1/userInfo/smsLogin', this.pForm)
+          this.$http.post('/userInfo/smsLogin', this.pForm)
             .then(response => {
               if (response.data.return_code === '0000') {
                 Toast({message: response.data.return_msg, duration: 2000})
@@ -155,7 +155,7 @@
         }
       },
       sendSms () {
-        this.$http.post('/v1/userInfo/sendLoginSms', this.pForm)
+        this.$http.post('/userInfo/sendLoginSms', this.pForm)
           .then(response => {
             if (response.data.return_code === '0000') {
               Toast({message: response.data.return_msg, duration: 2000})

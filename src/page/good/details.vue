@@ -141,7 +141,7 @@
         this.isShow = false
       },
       queryGoodsDetails () {
-        this.$http.post('/v1/shopGoodsInfo/queryGoodsDetails', {id: this.$route.params.id})
+        this.$http.post('/shopGoodsInfo/queryGoodsDetails', {id: this.$route.params.id})
           .then(response => {
             if (response.data.return_code === '0000') {
               this.goodsDetails = response.data.goodsDetails
@@ -159,7 +159,7 @@
       },
       selectGoodsSkuGet (Skuid) {
         this.isActive = true
-        this.$http.post('/v1/shopGoodsInfo/selectGoodsSkuGet', {specsId: Skuid, goodsId: this.$route.params.id})
+        this.$http.post('/shopGoodsInfo/selectGoodsSkuGet', {specsId: Skuid, goodsId: this.$route.params.id})
           .then(response => {
             if (response.data.return_code === '0000') { // 查询规格需要验证登录状态
               console.log('查询成功')

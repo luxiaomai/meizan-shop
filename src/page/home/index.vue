@@ -3,7 +3,9 @@
     <div class="indexSearch">
       <router-link to="/search"><img src="../../images/search.png">搜索商品</router-link>
     </div>
-    <app-banner :listImg="listImg"></app-banner>
+
+    <app-banner :AdList="adList"></app-banner>
+
     <new-list :newList="newList"></new-list>
     <div class="indexNav">
       <ul>
@@ -33,7 +35,28 @@
         </li>
       </ul>
     </div>
-    <router-link v-for="(shop, index) in shopGoodsInfoList" :key="index" :to="'/good/details/'+shop.ID" class="indexMain">
+
+    <div class="goodsList">
+      <div class="title">
+        <div class="left"><i></i>热门产品</div>
+        <div class="right">更多<img src="../../images/right.png"></div>
+      </div>
+      <div class="banner"></div>
+
+      <router-link v-for="(TjList, index) in goodsTjList" :key="index" :to="'/good/details/'+TjList.ID" v-if="index < 4" class="indexMain">
+        <ul>
+          <li>
+            <div><img :src="TjList.SHOW_IMAGE_URL"/></div>
+            <div>{{ TjList.GOODS_NAME }}</div>
+            <div>{{ TjList.GOODS_TITLE }}</div>
+            <div>￥{{ TjList.PRICE }}</div>
+          </li>
+        </ul>
+      </router-link>
+
+    </div>
+
+    <!--<router-link v-for="(shop, index) in shopGoodsInfoList" :key="index" :to="'/good/details/'+shop.ID" class="indexMain">
       <ul>
         <li>
           <div><img :src="shop.SHOW_IMAGE_URL"/></div>
@@ -42,7 +65,9 @@
           <div>￥{{ shop.PRICE }}</div>
         </li>
       </ul>
-    </router-link>
+    </router-link>-->
+    <div style="height: .6rem;clear: both"></div>
+
     <footer-link></footer-link>
   </div>
 </template>
@@ -59,16 +84,15 @@
       return {
         ID: '',
         shopGoodsInfoList: [], // 初始化参数
+        goodsTjList: [],
+        goodsYhList: [],
+        goodsXpList: [],
+        goodsJfList: [],
+        adList: [],
+        imageUrl: '',
         page: { // 分页数据
           page: 1 // 当前页
         },
-        listImg: [{
-          url: 'https://img1.360buyimg.com/da/jfs/t15847/334/613979012/180567/6cd6603d/5a37317dNafea8b1f.jpg'
-        }, {
-          url: 'https://img1.360buyimg.com/da/jfs/t12571/57/2316760604/100605/d08e0f0d/5a3a32a5N77d9abf8.jpg'
-        }, {
-          url: 'https://m.360buyimg.com/mobilecms/s1125x549_jfs/t14686/47/751063528/192742/56a05122/5a3767eeN02e870ee.jpg!q70.jpg'
-        }],
         newList: [{
           title: '美赞包子铺深圳店隆重开张'
         }, {
@@ -87,7 +111,7 @@
     },
     methods: {
       goodsList () {
-        this.$http.post('/v1/shopGoodsInfo/queryList', this.page)
+        this.$http.post('/shopGoodsInfo/queryList', this.page)
           .then(response => {
             if (response.data.return_code === '0000') {
               this.shopGoodsInfoList = response.data.shopGoodsInfoList // 赋值给数组
@@ -96,10 +120,37 @@
           .catch(function () {
             Toast({message: '请求错误', duration: 2000})
           })
+      },
+      goodsInfoList () {
+        this.$http.post('/shopGoodsInfo/queryGoodsInfoList')
+          .then(response => {
+            if (response.data.return_code === '0000') {
+              this.goodsTjList = response.data.goodsTjList // 赋值给数组
+              this.goodsTj = response.data.goodsTj
+            } else if (response.data.return_code === '0001') {}
+          })
+          .catch(function () {
+            Toast({message: '请求错误', duration: 2000})
+          })
+      },
+      AdListImg () {
+        this.$http.post('/bsAd/queryAdList')
+          .then(response => {
+            if (response.data.return_code === '0000') {
+              this.AdList = response.data.adList // 赋值给数组
+              this.imageUrl = response.data.imageUrl
+              console.log(this.AdList.imageUrl)
+            } else if (response.data.return_code === '0001') {}
+          })
+          .catch(function () {
+            Toast({message: '请求错误', duration: 2000})
+          })
       }
     },
-    created () {
+    mounted () {
       this.goodsList() // 加载数据
+      this.goodsInfoList()
+      this.AdListImg()
     }
   }
 </script>

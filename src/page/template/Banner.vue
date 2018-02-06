@@ -1,7 +1,7 @@
 <template>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="str in listImg" :style="{ backgroundImage: 'url(' + str.url + ')' }"></div>
+      <div class="swiper-slide" v-for="str in AdList" :style="{ backgroundImage: 'url(' + str.imageUrl + ')' }"></div>
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
   import 'swiper/dist/css/swiper.min.css'
 
   export default {
-    props: ['listImg'],
+    props: ['AdList'],
     mounted () {
       var swiper = new Swiper('.swiper-container', {
         loop: true,

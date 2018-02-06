@@ -22,6 +22,11 @@ Vue.prototype.$http = axios
 axios.defaults.transformRequest = function (data) {
   return Qs.stringify(data)
 }
+// if (process.env.NODE_ENV === 'development') { axios.defaults.baseURL = 'http://114.67.37.134:8080' }
+
+axios.defaults.timeout = 5000                       // 响应时间
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'          // 配置请求头
+axios.defaults.baseURL = 'http://114.67.37.134:8080'  // 配置接口地址
 
 /* eslint-disable no-new */
 new Vue({
