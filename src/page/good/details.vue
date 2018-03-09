@@ -7,7 +7,7 @@
         <div class="left">
           <div>{{ goodsDetails.goodsName }}</div>
           <div>¥<span id="prices">{{ goodsDetails.price }}</span><span
-            id="noPrices">¥{{ goodsDetails.discountPrice }}</span><span id="number">月销{{ salesCount }}笔</span></div>
+            id="noPrices">¥{{ goodsDetails.realPrice }}</span><span id="number">月销{{ salesCount }}笔</span></div>
         </div>
         <div class="right">
           <div>{{ count }}</div>
@@ -80,7 +80,18 @@
 
     <div class="goodsMain">
       <div class="title">查看图文详情</div>
-      <div class="main">{{ goodsDetails.content }}</div>
+     <!-- <div class="main">{{ goodsDetails.content }}</div>-->
+    </div>
+
+    <div class="goodsBtn">
+      <div>合计：<span>￥1000.00</span></div>
+      <div>加入购物车</div>
+      <div>立即购买</div>
+    </div>
+
+    <div class="goodsNum">
+      <img src="../../images/navBom2.png">
+      <span>1</span>
     </div>
 
     <div class="goodsSpec" v-show="isShow">
@@ -122,7 +133,7 @@
         specsId: '',
         goodsId: '',
         count: '',
-        result: 0,
+        result: 1,
         salesCount: '',
         goodsDetails: {},
         goodsAppraises: {},

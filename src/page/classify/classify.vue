@@ -62,7 +62,7 @@
         },
         page: { // 分页数据
           page: 1 // 当前页
-        },
+        }
       }
     },
     methods: {
@@ -89,7 +89,7 @@
           .catch(function () {
             Toast({message: '请求错误', duration: 2000})
           })
-      },
+      }
     },
     created () {
       this.queryShopCategoryInfoList()
