@@ -584,6 +584,7 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="tel
   float: left;
   border-top: 1px solid #f66800;
 }
+
 /*注册登录*/
 .loginTab {
   height: .48rem;
@@ -1152,4 +1153,165 @@ input[type="button"], input[type="submit"], input[type="reset"], input[type="tel
   font-size: .14rem;
   color: #F6AB00;
   margin-top: .22rem;
+}
+
+/*个人中心*/
+.personal-header{
+  width: 100%;
+  height: 1.8rem;
+  background: url(../images/personalBg.png) no-repeat;
+  background-size: cover;
+}
+.personal-header-main{
+  height: .6rem;
+  width: 100%;
+  padding-top: .6rem;
+}
+
+.personal-header-main .name{
+  float: left;
+  height: 100%;
+}
+
+.personal-header-main .name .left{
+  float: left;
+  height: .6rem;
+}
+
+.personal-header-main .name .left img{
+  width: .6rem;
+  height: 100%;
+  border-radius: 50%;
+  margin-left: .14rem;
+}
+
+.personal-header-main .name .right{
+  float: right;
+  color: #fff;
+  margin-left: .14rem;
+  margin-top: .04rem;
+}
+
+.personal-header-main .name .right p:first-child{
+  font-size: .16rem;
+}
+
+.personal-header-main .name .right p:last-child{
+  font-size: .12rem;
+  border: 1px solid #fff;
+  width: .5rem;
+  padding: 0 .04rem;
+  border-radius: 5px;
+  margin-top: .04rem;
+}
+
+.personal-header-main .points{
+  width: 1rem;
+  height: .28rem;
+  line-height: .3rem;
+  background: url(../images/pointsBg.png) no-repeat;
+  background-size: cover;
+  float: right;
+  margin-top: .16rem;
+  font-size: .12rem;
+  color: #fff;
+  text-align: right;
+}
+
+.personal-pay{
+  width: 3.19rem;
+  height: .78rem;
+  background: #fff;
+  margin: .2rem auto 0;
+  box-shadow: 0 2px 4px 0 rgba(102,102,102,0.09);
+  padding: 0 .14rem;
+}
+
+.personal-pay .left{
+  float: left;
+}
+
+.personal-pay .left p:first-child{
+  font-size: .12rem;
+  color: #999;
+  margin-top: .15rem;
+}
+
+.personal-pay .left p:last-child{
+  font-size: .24rem;
+  color: #333;
+}
+
+.personal-pay .right{
+  float: right;
+  width: .92rem;
+  height: .32rem;
+  line-height: .32rem;
+  border: 1px solid #FFA000;
+  border-radius: 4px;
+  color: #FFA000;
+  font-size: .16rem;
+  text-align: center;
+  margin-top: .22rem;
+}
+
+.personal-nav {
+  height: .94rem;
+  margin-bottom: .1rem;
+  margin-top: .1rem;
+  clear: both;
+}
+
+.personal-nav li {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.personal-nav li a {
+  text-align: center;
+  display: block;
+  font-size: .12rem;
+  color: #666666;
+}
+
+.personal-nav li a img {
+  width: .32rem;
+  height: .32rem;
+  margin: .26rem 0 .14rem 0;
+}
+
+.personal-nav li a span {
+  display: block;
+}
+
+.personal-list{
+  height: .69rem;
+  line-height: .7rem;
+  color: #333;
+  font-size: .14rem;
+  margin-left: .14rem;
+  padding-right: .14rem;
+  border-bottom: 1px solid #efeff4;
+  background: #fff;
+}
+
+.personal-list .left{
+  float: left;
+}
+
+.personal-list .left img{
+  width: .32rem;
+  height: .32rem;
+  margin: .19rem .14rem 0 0;
+}
+
+.personal-list .right{
+  float: right;
+}
+
+.personal-list .right img{
+  width: .08rem;
+  height: .13rem;
+  margin-top: .285rem;
 }

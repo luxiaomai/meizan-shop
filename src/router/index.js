@@ -9,6 +9,7 @@ import register from '@/page/login/register'
 import forgetPassword from '@/page/login/forgetPassword'
 import resetPassword from '@/page/login/resetPassword'
 import search from '@/page/search/search'
+import personal from '@/page/personal/personal'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
     {
       path: '/register',
       component: register
+    },
+    // 个人中心
+    {
+      path: '/personal',
+      component: personal
     },
     // 修改密码短信验证
     {
