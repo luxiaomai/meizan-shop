@@ -16,7 +16,9 @@
           <p>账户余额（元）</p>
           <p>8888.88</p>
         </div>
-        <div class="right">充值</div>
+        <router-link to="/recharge">
+          <div class="right">充值</div>
+        </router-link>
       </div>
     </div>
 <div style="clear: both"></div>

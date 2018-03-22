@@ -10,6 +10,8 @@ import forgetPassword from '@/page/login/forgetPassword'
 import resetPassword from '@/page/login/resetPassword'
 import search from '@/page/search/search'
 import personal from '@/page/personal/personal'
+import recharge from '@/page/personal/recharge'
+import order from '@/page/personal/myOrder'
 
 Vue.use(Router)
 
@@ -35,6 +37,16 @@ export default new Router({
     {
       path: '/personal',
       component: personal
+    },
+    // 充值页面
+    {
+      path: '/recharge',
+      component: recharge
+    },
+    // 我的订单
+    {
+      path: '/myOrder',
+      component: order
     },
     // 修改密码短信验证
     {
